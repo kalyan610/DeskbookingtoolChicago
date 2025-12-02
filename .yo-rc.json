@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "20.19.5",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.24.0"
+    },
+    "version": "1.20.0",
+    "libraryName": "deskbooking-tool-2025-version-2",
+    "libraryId": "54f8bc23-752f-44e3-a7ca-fc27492d4793",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "deskbooking-tool-2025-version-2",
+    "solutionShortDescription": "deskbooking-tool-2025-version-2 description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

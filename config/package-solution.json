@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "deskbooking-tool-2025-version-2-client-side-solution",
+    "id": "54f8bc23-752f-44e3-a7ca-fc27492d4793",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "deskbooking-tool-2025-version-2 description"
+      },
+      "longDescription": {
+        "default": "deskbooking-tool-2025-version-2 description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "deskbooking-tool-2025-version-2 Feature",
+        "description": "The feature that activates elements of the deskbooking-tool-2025-version-2 solution.",
+        "id": "00aba293-f32c-49cf-90bd-3f245e8b7638",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/deskbooking-tool-2025-version-2.sppkg"
+  }
+}

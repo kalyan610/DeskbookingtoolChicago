@@ -1,0 +1,789 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.deskbookingTool2025Version2 {
+  overflow: hidden;
+  padding: 1em;
+  color: "[theme:bodyText, default: #323130]";
+  color: var(--bodyText);
+  &.teams {
+    font-family: $ms-font-family-fallbacks;
+  }
+}
+
+.button {
+  // Our button
+  text-decoration: none;
+  height: 38px;
+
+  // Primary Button
+  width: 80px;
+  background-color: $ms-color-themePrimary;
+  border-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+
+  // Basic Button
+  outline: transparent;
+  position: relative;
+  font-family: Cambria;
+  -webkit-font-smoothing: antialiased;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  border-width: 0;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 16px;
+
+  .label {
+    font-weight: $ms-font-weight-semibold;
+    font-size: medium;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+ 
+}
+
+
+.button1 {
+  // Our button
+  text-decoration: none;
+  height: 38px;
+
+  // Primary Button
+  width: 90px;
+  background-color: $ms-color-themePrimary;
+  border-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+
+  // Basic Button
+  outline: transparent;
+  position: relative;
+  font-family: Cambria;
+  -webkit-font-smoothing: antialiased;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  border-width: 0;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 16px;
+
+  .label {
+    font-weight: $ms-font-weight-semibold;
+    font-size: medium;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+ 
+}
+
+
+.header
+{
+
+  font-size: large;
+
+  width: 30%;
+
+  font-family: Cambria;
+  
+}
+
+.col1
+{
+
+  font-size: medium;
+
+  width: 30%;
+
+  color:blue;
+}
+
+.Serachtextbox
+{
+
+  width: 50%;
+
+  font-family: "Cambria";
+
+  font-size: large;
+
+}
+
+.boxsize
+{
+
+  width: 100%;
+
+  height:30px;
+
+  font-size: medium;
+
+}
+
+.categorysize
+{
+
+width:30%;
+font-family: "Cambria";
+font-size: medium;
+font-weight: $ms-font-weight-regular;
+font-size: medium;
+
+}
+
+.DetAppName
+{
+
+width:80%;
+font-family: "Cambria";
+
+
+}
+
+.msTeams
+{
+
+  width:80%;
+  font-family: "Cambria";
+  font-size: medium;
+  font-weight: $ms-font-weight-semibold;
+  font-size: medium;
+
+
+}
+
+.detButton
+{
+
+  height:20px;
+  background-color: $ms-color-themePrimary;
+  border-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+  font-size: medium;
+  font-family: "Cambria";
+}
+
+.ProceedButton
+{
+
+  height: 38px;
+  width: 80px;
+  background-color: $ms-color-themePrimary;
+  color: $ms-color-white;
+  font-size: medium;
+  font-family: "Cambria";
+ 
+
+}
+
+.coststyle
+
+{
+
+
+  font-family: "Cambria";
+  font-size: medium;
+  font-weight: $ms-font-weight-regular;
+  font-size: medium;
+}
+
+.myBorder
+{
+
+//border: 1px solid black;
+padding: 10px;
+background-color:lightgrey;
+
+
+}
+
+.commonstyle
+{
+
+  a
+  {
+
+    color: black !important;
+  }
+  font-family: "Cambria";
+  font-size: medium;
+  width:50%;
+  height:30px;
+  //padding-left:18px;
+
+}
+
+
+
+
+.commonstyleDescRightbox
+{
+
+  font-family: "Cambria";
+  font-size: medium;
+  width:50%;
+  height:20px;
+
+
+}
+
+
+
+
+
+.borfont
+{
+
+border: 1px solid black;
+padding: 10px;
+font-family: "Cambria";
+font-size: medium;
+font-weight: $ms-font-weight-regular;
+font-size: medium;
+
+}
+
+.myBackcolor
+{
+
+background-color:lightgrey;
+//border: 1px solid black;
+padding: 15px;
+font-size: medium;
+border-radius: 20px;
+
+
+
+
+}
+
+.whitDescBox
+{
+
+  background-color:white;
+  //padding: 10px;
+  font-size: medium;
+
+  min-height: 150px;
+
+  border-radius: 20px;
+  
+  text-align: left;
+
+  padding: 10px;
+
+}
+
+
+.myDescBox
+{
+
+background-color:lightgrey;
+//border: 1px solid black;
+padding: 15px;
+font-size: medium;
+width:100%;
+font-family: "Cambria";
+font-size: medium;
+border-radius: 20px;
+
+}
+
+
+.myDescRightBox
+
+{
+
+  width:75%;
+  font-family: "Cambria";
+  font-size: medium;
+  background-color: lightgrey;
+  border-radius: 20px;
+
+}
+
+.onlyFont
+{
+
+  font-family: "Cambria";
+  font-size: medium;
+
+}
+
+.alignCenter
+{
+
+text-align: left;
+font-size: medium;
+font-family: "Cambria";
+font-weight: bold;
+
+}
+
+.AlignChange
+{
+
+  font-family: "Cambria";
+  font-size: medium;
+  width:50%;
+  height:20px;
+  padding-left: 15px;
+
+}
+
+.commonstyleDescRightboxonly
+{
+
+
+  font-family: "Cambria";
+  font-size: medium;
+  width:50%;
+  height:20px;
+
+
+}
+
+
+.tableborder
+{
+
+  .tablecell {border: 1px solid black; text-align: center;
+  
+    font-family: Cambria;
+    font-size: medium;
+    font-weight: bold;
+  
+  
+  }
+
+  
+
+
+  .tablecelldata{padding: 5px;
+    height: 40px;
+    border: 0.5px solid black;
+    border-radius: 0px;
+    font-family: Cambria;
+    font-size: medium;
+    
+  
+  }
+
+
+  .tablecelldata1{padding: 5px;
+    height: 40px;
+    border: 0.5px solid black;
+    border-radius: 0px;
+    font-family: Cambria;
+    font-size: medium;
+    text-align: center;
+    
+  
+  }
+
+
+
+
+  border: 1px solid black;
+  border-collapse: collapse;
+
+    border-right: thick;
+    border-left: thick;
+    border-bottom: thick;
+    border-top: thick;
+}
+
+
+
+.smallBox::before
+{
+  content:".";
+  width:15px;
+  height:15px;
+  float:left;
+  margin-right:10px;
+}
+.greenBox::before
+{
+  content:"";
+  background:darkgreen;
+}
+
+.redClass input[type=checkbox]
+{
+
+  background-color:red;
+
+}
+
+.normalClass input[type=checkbox]
+{
+
+  
+  background-color: gray;
+}
+
+.normalClass input[type=checkbox]:checked
+{
+
+  background:green;
+}
+
+.Iconbutton {
+  // Our button
+  text-decoration: none;
+  height: 38px;
+
+  // Primary Button
+  width: 80px;
+  
+  color: black;
+
+  // Basic Button
+  outline: transparent;
+  position: relative;
+  font-family: Cambria;
+  -webkit-font-smoothing: antialiased;
+  font-size: $ms-font-size-m;
+  font-weight: $ms-font-weight-regular;
+  border-width: 0;
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 16px;
+
+  .label {
+    font-weight: $ms-font-weight-semibold;
+    font-size: medium;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+ 
+}
+
+.chkboxDeactive{
+
+   
+
+  div {
+
+    background-color: red !important;
+  
+ } 
+
+
+}
+
+.chkboxActive{
+
+   
+
+  div {
+
+    background-color: gray !important;
+  
+ } 
+
+
+}
+
+.chkboxActive:is-checked {
+
+   
+
+  div {
+
+    background-color: green !important;
+  
+ } 
+
+
+}
+
+.resevedSeats1 {
+
+  div {
+
+  background-color:darkgreen !important;
+  font-weight: bold;
+  font-family: Cambria;
+  font-size: medium;
+  
+
+  }
+
+}
+
+.resevedSeats {
+
+  div {
+
+  background-color: red !important;
+  font-weight: bold;
+  font-family: Cambria;
+  font-size: medium;
+  
+
+  }
+
+}
+
+.emptySeats {
+
+  div {
+
+  background-color: gray !important;
+  font-weight: bold;
+  font-family: Cambria;
+  font-size: medium;
+  
+
+  }
+
+}
+
+.headings {
+
+  font-family: Cambria;
+  font-size: medium;
+  font-weight: bold;
+  
+  
+}
+
+.MyStyling
+{
+
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.labelsFonts
+{
+
+  font-size: 14px;
+
+  font-family: Cambria;
+
+ 
+}
+
+.recolorss
+{
+
+  color: #FF0000;
+}
+
+.Divsection
+{
+
+  padding:10px;
+
+
+}
+
+.DateClass {
+  text-align: center;
+  font-size: 80px;
+  
+}
+
+.dateTimeClass
+{
+
+  width:40%;
+
+}
+
+.smallDateTime {
+  
+  // Reduce top and bottom spacing
+  .ms-Label {
+    margin-bottom: 2px !important;
+    font-size: 12px !important;
+  }
+
+  // Date box (Fluent UI text field)
+  .ms-TextField-fieldGroup {
+    height: 28px !important;
+    min-height: 28px !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+  }
+
+  .ms-TextField-field {
+    height: 26px !important;
+    line-height: 26px !important;
+    padding: 0 8px !important;
+    font-size: 12px !important;
+  }
+
+  // Time row layout
+  .timeRow {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+  }
+
+  .colon {
+    padding: 0 4px;
+    font-size: 14px;
+  }
+
+  // Dropdowns (hour + minute)
+  .ms-Dropdown {
+    width: 70px !important;   // make smaller
+  }
+
+  .ms-Dropdown-title {
+    height: 28px !important;
+    min-height: 28px !important;
+    line-height: 26px !important;
+    border-radius: 4px !important;
+    padding-left: 8px !important;
+    font-size: 12px !important;
+  }
+
+  .ms-Dropdown-item {
+    font-size: 12px !important;
+    padding: 2px 6px !important;
+  }
+
+.formRow {
+  padding: 10px;
+  align-items: center;
+}
+
+/* Input Box Styling */
+.inputWrapper {
+  width: 30%;
+}
+.inputBox {
+  width: 100%;
+  height: 36px;
+  padding: 8px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-family: Cambria;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+.inputBox:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 4px #0078d4;
+}
+
+/* People Picker Styling */
+.peoplePickerWrapper {
+  width: 45%;
+}
+
+/* Better Primary Button */
+.primaryButton {
+  background-color: #0078d4 !important;
+  font-size: 14px;
+  font-family: Cambria;
+  padding: 6px 20px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+.primaryButton:hover {
+  background-color: #005a9e !important;
+}
+
+.cardContainer {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  margin-top: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-family: Cambria;
+}
+
+/* Form Row */
+.inputRow {
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Input */
+.inputBox {
+  width: 100%;
+  height: 38px;
+  padding: 8px;
+  font-family: Cambria;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+.inputBox:focus {
+  outline: none;
+  border-color: #0078d4;
+  box-shadow: 0 0 5px #0078d4;
+}
+
+/* Button */
+.addButton {
+  height: 38px;
+  padding: 0 20px;
+  font-family: Cambria;
+  border-radius: 6px !important;
+  background-color: #0078d4 !important;
+  color: white !important;
+  transition: 0.2s;
+}
+.addButton:hover {
+  background-color: #005a9e !important;
+}
+
+/* Table Wrapper */
+.tableContainer {
+  margin-top: 20px;
+}
+.tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Cambria;
+}
+.tableContainer th {
+  background: #f3f2f1;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+}
+.tableContainer td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+.tableContainer tr:hover {
+  background: #fafafa;
+  transition: 0.2s;
+}
+
+
+
+}
+
+
