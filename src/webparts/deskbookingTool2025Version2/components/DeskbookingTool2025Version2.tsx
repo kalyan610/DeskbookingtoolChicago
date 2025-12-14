@@ -31,11 +31,16 @@ const dropdownStyles: Partial<IDropdownStyles> = {
 
 };
 
+
+
+
 const dropdownStyles1: Partial<IDropdownStyles> = {
   dropdown: { width: 150 },
  
 
 };
+
+
 
 const options: IDropdownOption[] = [
 
@@ -69,17 +74,22 @@ let checkboxstyles: ICheckboxStyles = {
 
 
   const stackButtonStyles: Partial<IStackStyles> = { root: { Width: 20 } };
+
+  //const stackButtonStyles1: Partial<IStackStyles> = { root: { Width: 60 } };
 const stackTokens = { childrenGap: 80 };
 
 const sectionStackTokens: IStackTokens = { childrenGap: 10 };
 
 
 
+
+
    export interface IDeskbookingtool2025Version2 {
     Mylocationval: any;
-    MyBuildingVal: any;
+    Mylocationval1:any;
     MyBookingTypeVal: any;
     MyFloorType: any;
+    MyFloorType1:any;
     flag: boolean;
     procflag:boolean;
     startDate?: Date
@@ -88,7 +98,7 @@ const sectionStackTokens: IStackTokens = { childrenGap: 10 };
     ItemInfo: any;
     ConcString: string;
     LocationListItems: any;
-    BuildingListItems: any;
+    LocationListItems1:any;
     BookingListItems: any;
     FloorListItems: any;
     userExsits: boolean;
@@ -121,6 +131,9 @@ const sectionStackTokens: IStackTokens = { childrenGap: 10 };
     QuestKey:any;
     isDisable:boolean;
     FirstDivVisble:boolean;
+    HideSecondPage:boolean;
+    HideThirdPage:boolean;
+    
     
   
   }
@@ -159,9 +172,10 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
    this.state = {
   
         Mylocationval: null,
-        MyBuildingVal: null,
-        MyBookingTypeVal: null,
+        Mylocationval1:null,
+       MyBookingTypeVal: null,
         MyFloorType: null,
+        MyFloorType1:null,
         flag: false,
         procflag:false,
         NoofSeats: null,
@@ -171,7 +185,7 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
         ItemInfo: null,
         ConcString: "",
         LocationListItems: [],
-        BuildingListItems: [],
+       LocationListItems1:[],
         BookingListItems: [],
         FloorListItems: [],
         userExsits: false,
@@ -201,7 +215,9 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
        Closekey:"",
        QuestKey:"",
        isDisable:true,
-       FirstDivVisble:true
+       FirstDivVisble:true,
+       HideSecondPage:false,
+       HideThirdPage:false
        
   
       };
@@ -214,7 +230,8 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
     this._service = new Service(this.props.url, this.props.context);
   
       this.getAllLocations();
-      this.getAllBuildings();
+      
+     this.getAllLocations1();
       this.getAllFloorLevels();
        this.getAllBookingTypes();
 
@@ -222,6 +239,8 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
 
 
   public async getAllLocations() {
+
+    alert('one');
 
      let myLocationLocal: ILocationItem[] = [];
 
@@ -244,36 +263,40 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
     }
   });
 
-  this.setState({ LocationListItems: myLocationLocal });
+  this.setState({ LocationListItems: myLocationLocal,Mylocationval: AllLocations[0].text });
 
   }
 
-  public async getAllBuildings() {
 
-     let myBulidingLocal: IBuldingItems[] = [];
+   public async getAllLocations1() {
 
-  const data: any[] = await this._service.MyGetAllBulidings();
+    alert('one');
+
+     let myLocationLocal1: ILocationItem[] = [];
+
+  const data: any[] = await this._service.MyGetAllocations1();
 
   console.log(data);
 
-  let AllBuildings: IBuldingItems[] = data.map(item => ({
+  let AllLocations: ILocationItem[] = data.map(item => ({
     key: item.Title,
     text: item.Title
   }));
 
-  console.log(AllBuildings);
+  console.log(AllLocations);
 
-  AllBuildings.forEach((item: IBuldingItems) => {
-    const itemExists = myBulidingLocal.some(ditem => ditem.key === item.key);
+  AllLocations.forEach((item: ILocationItem) => {
+    const itemExists = myLocationLocal1.some(ditem => ditem.key === item.key);
 
     if (!itemExists) {
-      myBulidingLocal.push({ key: item.key, text: item.text });
+      myLocationLocal1.push({ key: item.key, text: item.text });
     }
   });
 
-  this.setState({ BuildingListItems: myBulidingLocal });
+  this.setState({ LocationListItems1: myLocationLocal1,Mylocationval1: AllLocations[0].text });
 
   }
+
 
     public async getAllFloorLevels() {
 
@@ -298,7 +321,7 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
     }
   });
 
-  this.setState({ FloorListItems: myFloorLevelLocal });
+  this.setState({ FloorListItems: myFloorLevelLocal, MyFloorType:AllFloorLevels[0].text});
 
   }
 
@@ -330,94 +353,37 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
   }
 
 
-   private handleChangeLocation(event: React.FormEvent<HTMLDivElement>, item: IDropdownOption): void {
+   private handleChangeLocation(event: React.FormEvent<HTMLDivElement>, item: IDropdownOption): void 
+   {
 
-    // if (this.state.BuildingListItems.length > 0) {
-
-    //   BuildingListItems: [];
-    //   BookingListItems: [];
-    //   FloorListItems: [];
-
-    //   this.setState({ BuildingListItems: [] });
-    //   this.setState({ BookingListItems: [] });
-    //   this.setState({ FloorListItems: [] });
-    //   this.setState({ ConcString: '' });
-
-    //   this.setState({ MyBuildingVal: 'Select' });
-    //   this.setState({ MyBookingTypeVal: 'Select' });
-    //   this.setState({ MyFloorType: 'Select' });
-
-
-    // }
-
-
-    // //this.GetBulidingData(item.text);
-
-    // //SelLoca = item.text;
-
+    
     this.setState({ Mylocationval: item.text });
 
-    console.log(this.state.MyBuildingVal);
+  }
+
+     private handleChangeLocation1(event: React.FormEvent<HTMLDivElement>, item: IDropdownOption): void 
+   {
+
+    
+    this.setState({ Mylocationval1: item.text });
 
   }
 
-  private handleChangeBuilding(event: React.FormEvent<HTMLDivElement>, item: IDropdownOption): void {
 
-
-    // if (this.state.BookingListItems.length > 0) {
-
-    //    BookingListItems: [];
-    //   FloorListItems: [];
-    //   this.setState({ ConcString: '' });
-    //   this.setState({ BookingListItems: [] });
-    //   this.setState({ FloorListItems: [] });
-    //   this.setState({ MyBookingTypeVal: 'Select' });
-    //   this.setState({ MyFloorType: 'Select' });
-
-    // }
-
-
-
-    // console.log(item.text);
-    // //SelBuilding = item.text;
-
-    this.setState({ MyBuildingVal: item.text });
-    //this.GetBookingsData(SelLoca, SelBuilding);
-
-
-  }
 
   private handleChangeBookingType(event: React.FormEvent<HTMLDivElement>, item: IDropdownOption): void {
 
 
-    // if (this.state.FloorListItems.length > 0) {
-
-    //    FloorListItems: [];
-    //   this.setState({ FloorListItems: [] });
-    //   this.setState({ MyFloorType: 'Select' });
-    //   this.setState({ ConcString: '' });
-
-    // }
-
-
-    // if (this.state.FloorListItems.length > 0) {
-    //   FloorListItems: [];
-
-    // }
-
-    // console.log(item.text);
-    // //SelBookingType = item.text;
+    
     this.setState({ MyBookingTypeVal: item.text });
-    //this.GetFloorsData(SelLoca, SelBuilding, SelBookingType);
+    
 
   }
 
 
   private handleChangeFloorLevel(event: React.FormEvent<HTMLDivElement>, item: IDropdownOption): void {
 
-    // this.setState({ ConcString: '' });
-    // console.log(item.text);
-    // //SelFloorLevel = item.text;
+    
     this.setState({ MyFloorType: item.text });
 
 
@@ -513,8 +479,11 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
       if (BlockStatus == false) {
 
 
-        //var MyBuild=this.state.MyBuildingVal;
+          this.setState({HideThirdPage:true})
+           this.setState({HideSecondPage:true})
 
+
+        //var MyBuild=this.state.MyBuildingVal;
         //let  MyHyperlink= await this._service.GetPDFLinks1(MyBuild,MyBookingType,MyFloorLevel);
         //this.setState({LinkFloor:MyHyperlink});
 
@@ -564,6 +533,8 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
           }
           this.setState({chckboxesseats:avaiblesets});
           this.setState({Dispalygrid:true});
+          this.setState({HideThirdPage:true})
+           this.setState({HideSecondPage:true})
 
         }
 
@@ -604,16 +575,16 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
 
     //Gan
     
-    // let DeskDescprtion= await this._service.GetDeskDesc(SelDeskId);
+    let DeskDescprtion= await this._service.GetDeskDesc(SelDeskId);
     
 
-    // console.log(DeskDescprtion);
+    console.log(DeskDescprtion);
 
-    // if(DeskDescprtion!=null)
-    // {
-    // this.setState({DeskDesc:DeskDescprtion});
+    if(DeskDescprtion!=null)
+    {
+    this.setState({DeskDesc:DeskDescprtion});
 
-    // }
+    }
 
     //END
 
@@ -646,72 +617,7 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
 
 
   }
-// private OnAddRowsClick(): boolean {
 
-//   const { deskId, GridUserValues } = this.state;
-
-//   // Validate DeskId
-//   if (!deskId || deskId.trim() === "") {
-//     alert("Please enter the DeskId");
-//     return false;
-//   }
-
-//   // Validate User email
-//   if (!Userreqemail || Userreqemail.trim() === "") {
-//     alert("Please select username");
-//     return false;
-//   }
-
-//   // Check values
-//   const isItemChecked = this.checkItemChecked(deskId, AllCheckedItems);
-//   const isUserNameExists = this.checkItemUserName(Userreqemail, GridUserValues);
-//   const isDeskIDExists = this.checkDeskIDchked(deskId, GridUserValues);
-
-//   // Validation block
-//   if (!isItemChecked) {
-//     alert("Please enter the desk number which you selected above");
-//     return false;
-//   }
-
-//   if (isUserNameExists) {
-//     alert("Please select a different username");
-//     return false;
-//   }
-
-//   if (isDeskIDExists) {
-//     alert("Please enter a different DeskId");
-//     return false;
-//   }
-
-//   // If all good → Add row
-//   if (isItemChecked && !isUserNameExists && !isDeskIDExists) {
-//     const newRow = {
-//       UserEmail: Userreqemail,
-//       UserName: UserreqName,
-//       DeskId: deskId
-//     };
-
-//     const updatedGrid = [...(GridUserValues || []), newRow];
-
-//     this.setState({
-//       GridUserValues: updatedGrid,
-//       deskId: "",
-//       Userboolval: true,
-//       MyUserName: "",
-//       checkstatus: false
-//     });
-
-//     // Reset global variables
-//     Userreqemail = "";
-//     UserreqName = "";
-//     this.ppl.onChange([]);
-
-
-//     return true;
-//   }
-
-//   return false;
-// }
 
 
   public checkItemChecked(itemName: string, ItemArray: any): boolean {
@@ -882,12 +788,7 @@ private OnAddRowsClick(): boolean {
 
     }
 
-    else if (this.state.MyBuildingVal == null || this.state.MyBuildingVal == 'Select Building' || this.state.MyBuildingVal == 'Select') {
-
-      alert('please select Building');
-      this.setState({ flag: false });
-
-    }
+    
 
 
     else if (this.state.MyBookingTypeVal == null || this.state.MyBookingTypeVal == 'Select BookingType' || this.state.MyBookingTypeVal == 'Select') {
@@ -908,6 +809,7 @@ private OnAddRowsClick(): boolean {
     else {
 
       this.setState({ flag: true });
+       this.setState({ HideSecondPage: true });
     }
 
    }
@@ -919,6 +821,10 @@ private OnAddRowsClick(): boolean {
     this.setState({Dispalygrid:false});
 
     this.setState({GridUserValues:[]});
+
+    this.setState({ HideSecondPage: false });
+
+    this.setState({ HideThirdPage: false });
 
     //AllCheckedItems=[];
 
@@ -946,11 +852,11 @@ private OnAddRowsClick(): boolean {
 
       let MyTilte=this.state.Mylocationval + "-" +this.state.GridUserValues[count].UserName + "-" +this.state.MyFloorType 
 
-      this._service.onDrop(this.state.Mylocationval,this.state.MyBuildingVal,this.state.MyBookingTypeVal,this.state.MyFloorType,this.state.startDate,this.state.EndDate,this.state.GridUserValues[count].DeskId,this.state.GridUserValues[count].UserEmail,MyTilte).then(function (data:any)
+      this._service.onDrop(this.state.Mylocationval,'Wills Tower',this.state.MyBookingTypeVal,this.state.MyFloorType,this.state.startDate,this.state.EndDate,this.state.GridUserValues[count].DeskId,this.state.GridUserValues[count].UserEmail,MyTilte).then(function (data:any)
       {
 
      
-     //window.location.replace("https://capcoinc.sharepoint.com/sites/Global-Capco-Desk-Reservations/");
+     window.location.replace("https://capcoinc.sharepoint.com/sites/ChicagoDeskReservation");
 
       });
 
@@ -967,53 +873,52 @@ private OnAddRowsClick(): boolean {
 public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
 
     return (
-      <Stack tokens={stackTokens} styles={stackStyles}>
+    
+<Stack tokens={stackTokens} styles={stackStyles}>
       
-{this.state.flag == false &&
+{this.state.HideSecondPage==false && this.state.HideThirdPage==false &&
 <Stack>
       <label className={styles.headings}>Location</label>
             <br></br>
-            <Dropdown placeHolder="Select Location" options={this.state.LocationListItems} className={styles.headings} styles={dropdownStyles} selectedKey={this.state.Mylocationval ? this.state.Mylocationval : undefined} onChange={this.handleChangeLocation.bind(this)} /><br></br>
-            <label className={styles.headings}>Building</label><br></br>
-            <Dropdown placeHolder="Select Building" options={this.state.BuildingListItems} styles={dropdownStyles} selectedKey={this.state.MyBuildingVal ? this.state.MyBuildingVal : undefined} onChange={this.handleChangeBuilding.bind(this)} /><br></br>
+            <Dropdown options={this.state.LocationListItems} className={styles.headings} styles={dropdownStyles} selectedKey={this.state.Mylocationval ? this.state.Mylocationval : undefined} onChange={this.handleChangeLocation.bind(this)} /><br></br>
+                        <label className={styles.headings}>Building</label><br></br>
+            <Dropdown  options={this.state.LocationListItems1} styles={dropdownStyles} selectedKey={this.state.Mylocationval1 ? this.state.Mylocationval1 : undefined} onChange={this.handleChangeLocation1.bind(this)} /><br></br>
+            
+        <label className={styles.headings}>Floor Level</label><br></br>
+        <Dropdown  options={this.state.FloorListItems} styles={dropdownStyles} selectedKey={this.state.MyFloorType ? this.state.MyFloorType : undefined} onChange={this.handleChangeFloorLevel.bind(this)} /><br></br>
+           
+           
             <label className={styles.headings}>Booking Type</label><br></br>
             <Dropdown placeHolder="Select Booking Type" options={this.state.BookingListItems} styles={dropdownStyles} selectedKey={this.state.MyBookingTypeVal ? this.state.MyBookingTypeVal : undefined} onChange={this.handleChangeBookingType.bind(this)} /><br></br>
-            <label className={styles.headings}>Floor Level</label><br></br>
-            <Dropdown placeHolder="Select Floor Level" options={this.state.FloorListItems} styles={dropdownStyles} selectedKey={this.state.MyFloorType ? this.state.MyFloorType : undefined} onChange={this.handleChangeFloorLevel.bind(this)} /><br></br>
-           
+
             <PrimaryButton text="Next" onClick={this.OnBtnClick.bind(this)} styles={stackButtonStyles} className={styles.button} />
       
 </Stack>
 
 }
 
- {this.state.flag == true &&
+{this.state.HideSecondPage==true &&
 
 <Stack className={styles.dateTimeClass}>
 <div>
   <label className={styles.headings}>Start Date</label><br></br>
   </div><br></br>
-
- <DateTimePicker
+<DateTimePicker
         value={this.state.startDate}
         onChange={(date) => this.setState({ startDate: date })}
   timeDisplayControlType={TimeDisplayControlType.Dropdown}
   formatDate={this._onFormatDate}
   /><br></br>
-
-  <div>
+<div>
   <label className={styles.headings}>End Date</label><br></br>
   </div><br></br>
-
- <DateTimePicker
+<DateTimePicker
         value={this.state.EndDate}
         onChange={(date) => this.setState({ EndDate: date })}
   timeDisplayControlType={TimeDisplayControlType.Dropdown}
   formatDate={this._onFormatDate}
   /><br></br>
 
-
- 
 <Stack horizontal tokens={sectionStackTokens}>
  <StackItem className={styles.commonstyle}>
 
@@ -1032,6 +937,7 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
             </StackItem>
 </Stack>
 <br></br>
+<br></br>
 
 <Stack>
 <Stack horizontal tokens={sectionStackTokens}>
@@ -1044,12 +950,14 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
 </Stack>
 </Stack>
 
+</Stack>
+ 
+ }
+
+{this.state.HideSecondPage==true && this.state.HideThirdPage==true &&
+
 <Stack>
-<br></br>
 
-<Stack horizontal tokens={sectionStackTokens1}>
-
-</Stack> <br/>
 
 <Stack tokens={sectionStackTokens1}>
 
@@ -1096,18 +1004,23 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
 
 </Stack><br/> 
 
-
+<Stack tokens={{ childrenGap: 4 }} className={styles.labelBlock}>
+  <label className={styles.headings}>Desk Description</label><br></br>
+  <label className={styles.resevedSeats}>{this.state.DeskDesc}</label>
 </Stack>
+<br>
+</br>
 
+{/* <div className={styles.cardContainer}> */}
 
-<div className={styles.cardContainer}>
+<h3 className={styles.sectionTitle}>Assign Desk</h3>
 
-  <h3 className={styles.sectionTitle}>Assign Desk</h3>
-
-  <Stack horizontal wrap tokens={{ childrenGap: 10 }} className={styles.inputRow}>
+  {/* <Stack horizontal tokens={{ childrenGap: 12 }}  className={styles.inputRow}> */}
+     <Stack horizontal tokens={{ childrenGap: 12 }}>
     
     {/* Desk Input */}
-    <StackItem grow={1}>
+    {/* className={styles.formItemSpacing} */}
+    <StackItem className={styles.formItemSpacing}>
       <input
         type="text"
         name="txtDeskID"
@@ -1115,41 +1028,46 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
         onChange={this.changeDesk.bind(this)}
         placeholder="Enter Desk Number"
         className={styles.inputBox}
-      />
+        />
     </StackItem>
 
     {/* PeoplePicker */}
-    <StackItem grow={2}>
-      <PeoplePicker
+    <StackItem className={styles.formItemSpacing}>
+     
+      <PeoplePicker 
         context={this.props.context}
         personSelectionLimit={1}
         showtooltip={true}
         required={true}
         disabled={false}
+        placeholder='Please enter Email'
         onChange={this._getPeoplePickerItems}
         principalTypes={[PrincipalType.User, PrincipalType.SecurityGroup]}
         webAbsoluteUrl="https://capcoinc.sharepoint.com/"
         defaultSelectedUsers={this.state.UserLoginName ? [this.state.UserLoginName] : []}
         resolveDelay={1000}
-        ref={(c) => (this.ppl = c)}
+       ref={(c) => (this.ppl = c)}
       />
+      
     </StackItem>
 
     {/* Add Button */}
     <StackItem>
       <PrimaryButton 
         text="Add" 
-        className={styles.addButton}
+        className={styles.button}
+        styles={stackButtonStyles}
         onClick={this.OnAddRowsClick.bind(this)} 
       />
-    </StackItem>
-
+     </StackItem>
+    
   </Stack>
-</div>
+{/* </div> */}
 
-  {this.state.flag == true &&
+<br></br>
+<Stack>
 
-        <Stack horizontal tokens={sectionStackTokens}>
+  <Stack horizontal tokens={sectionStackTokens}>
 
            <Grid container className={styles.tableborder}>
 
@@ -1198,10 +1116,17 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
 
           </Grid>
 
-         </Stack>
+  </Stack>
 
+  
 
-  }
+</Stack>
+
+</Stack>
+
+}
+
+{this.state.HideSecondPage==true &&  this.state.HideThirdPage==true &&
 
 <Stack horizontal tokens={sectionStackTokens}>
   <StackItem>
@@ -1211,11 +1136,13 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
 
 </Stack>
 
-</Stack>
-
-}
+ }
 
 </Stack>
+
+
+
+
     
     );
   }

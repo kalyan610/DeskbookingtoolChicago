@@ -13,8 +13,8 @@
 .button {
   // Our button
   text-decoration: none;
-  height: 38px;
-
+  //height: 38px;
+height: 10px;
   // Primary Button
   width: 80px;
   background-color: $ms-color-themePrimary;
@@ -33,6 +33,7 @@
   cursor: pointer;
   display: inline-block;
   padding: 0 16px;
+ 
 
   .label {
     font-weight: $ms-font-weight-semibold;
@@ -46,6 +47,16 @@
 
  
 }
+
+.formItemSpacing {
+  margin-right: 6px !important;
+  
+  .inputBox{
+
+    height: 25px;
+  }
+}
+
 
 
 .button1 {
@@ -604,7 +615,9 @@ font-weight: bold;
 .dateTimeClass
 {
 
-  width:40%;
+
+  //Change on Date CSS
+  width:30%;
 
 }
 
@@ -667,19 +680,27 @@ font-weight: bold;
   align-items: center;
 }
 
+// .peoplePickerWrapper,
+// .inputBox {
+//   height: 38px !important;
+// }
+
 /* Input Box Styling */
 .inputWrapper {
-  width: 30%;
+  width: 20% !important;
 }
 .inputBox {
   width: 100%;
-  height: 36px;
+  height: 100px;
   padding: 8px;
   border: 1px solid #d0d0d0;
   border-radius: 6px;
   font-family: Cambria;
   font-size: 14px;
   transition: 0.2s ease-in-out;
+  background-color: $ms-color-themePrimary;
+  border-color: $ms-color-themePrimary;
+  color: $ms-color-white;
 }
 .inputBox:focus {
   outline: none;
@@ -689,12 +710,26 @@ font-weight: bold;
 
 /* People Picker Styling */
 .peoplePickerWrapper {
-  width: 45%;
+ width: 40% !important;
+}
+
+.MySeatsRow {
+  display: flex;
+  align-items: center;
+  gap: 8px; // reduce this
+}
+
+.addButtonWrapper {
+  width: auto;
+}
+
+.formItemSpacing {
+  margin-right: 6px !important;   // small gap between items
 }
 
 /* Better Primary Button */
 .primaryButton {
-  background-color: #0078d4 !important;
+  background-color: #FF0000 !important;
   font-size: 14px;
   font-family: Cambria;
   padding: 6px 20px;
@@ -724,7 +759,22 @@ font-weight: bold;
 /* Form Row */
 .inputRow {
   align-items: center;
-  margin-bottom: 15px;
+  //margin-bottom: 10px;
+
+  gap: 4px !important;
+
+// input[type="text"]
+//  {
+//   width: 100%;
+//   height: 38px;
+//   padding: 8px;
+//   font-family: Cambria;
+//   font-size: 14px;
+//   border: 1px solid #ccc;
+//   border-radius: 6px;
+//   transition: 0.2s;
+// }
+
 }
 
 /* Input */
@@ -744,20 +794,31 @@ font-weight: bold;
   box-shadow: 0 0 5px #0078d4;
 }
 
-/* Button */
-.addButton {
-  height: 38px;
-  padding: 0 20px;
-  font-family: Cambria;
-  border-radius: 6px !important;
-  background-color: #0078d4 !important;
-  color: white !important;
-  transition: 0.2s;
-}
-.addButton:hover {
-  background-color: #005a9e !important;
+.labelBlock {
+  margin-bottom: 6px;  /* reduce gap here */
 }
 
+/* Button */
+.addButton {
+  width: 80px;
+  height: 38px;
+  border-radius: 6px;
+  font-family: Cambria;
+}
+
+.addButton :global(.ms-Button-flexContainer) {
+  justify-content: center;
+}
+
+.addButton :global(.ms-Button) {
+  background-color: #0078d4 !important; /* Button blue */
+  color: #ffffff !important;
+  border: none;
+}
+
+.addButton :global(.ms-Button):hover {
+  background-color: #005a9e !important; /* Hover blue */
+}
 /* Table Wrapper */
 .tableContainer {
   margin-top: 20px;
@@ -780,6 +841,41 @@ font-weight: bold;
 .tableContainer tr:hover {
   background: #fafafa;
   transition: 0.2s;
+}
+
+
+.peoplePickerSmall {
+
+  .ms-BasePicker-text {
+    min-height: 38px !important;
+    height: 38px !important;
+    padding: 6px 8px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .ms-BasePicker-element {
+    min-height: 38px !important;
+    height: 38px !important;
+  }
+
+  .ms-BasePicker-input {
+    height: 30px !important;
+    padding: 4px !important;
+    font-size: 14px !important;
+  }
+
+  .ms-BasePicker-selectedItems {
+    margin-top: 4px !important;
+  }
+}
+
+.peoplePickerSmallWrapper {
+  :global(.ms-BasePicker-text) { min-height: 38px !important; height: 38px !important; padding: 6px 8px !important; display:flex; align-items:center; }
+  :global(.ms-BasePicker-element) { min-height: 38px !important; }
+  :global(.ms-BasePicker-input) { height: 30px !important; padding:4px !important; }
 }
 
 

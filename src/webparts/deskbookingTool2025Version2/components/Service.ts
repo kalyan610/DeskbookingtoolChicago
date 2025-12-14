@@ -42,7 +42,7 @@ public async MyGetAllocations():Promise<any>
 
    }
 
-  public async MyGetAllBulidings():Promise<any>
+public async MyGetAllocations1():Promise<any>
    {
 
     
@@ -55,6 +55,7 @@ public async MyGetAllocations():Promise<any>
 
 
    }
+
 
      
 public async MyGetAllFloorLevels():Promise<any>
