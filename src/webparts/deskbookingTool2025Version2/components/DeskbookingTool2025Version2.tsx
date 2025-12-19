@@ -240,7 +240,7 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
 
   public async getAllLocations() {
 
-    alert('one');
+   
 
      let myLocationLocal: ILocationItem[] = [];
 
@@ -270,7 +270,7 @@ export default class DeskbookingTool2025Version2 extends React.Component<IDeskbo
 
    public async getAllLocations1() {
 
-    alert('one');
+    
 
      let myLocationLocal1: ILocationItem[] = [];
 
@@ -856,7 +856,7 @@ private OnAddRowsClick(): boolean {
       {
 
      
-     window.location.replace("https://capcoinc.sharepoint.com/sites/ChicagoDeskReservation");
+     window.location.replace("https://capcoinc.sharepoint.com/sites/ChicagoOfficeReservation/");
 
       });
 
