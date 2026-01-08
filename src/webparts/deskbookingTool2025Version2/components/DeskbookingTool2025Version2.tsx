@@ -945,7 +945,7 @@ public render(): React.ReactElement<IDeskbookingTool2025Version2Props> {
             <PrimaryButton text="Previous" styles={stackButtonStyles}  onClick={this.OnBtnPrevClick.bind(this)} className={styles.button} />
             </StackItem>
             <StackItem className={styles.commonstyle}>
-            <PrimaryButton text="Start Selecting" styles={stackButtonStyles} className={styles.button1} onClick={this.SelectSeats.bind(this)} />
+            <PrimaryButton text="Select" styles={stackButtonStyles} className={styles.button1} onClick={this.SelectSeats.bind(this)} />
              </StackItem><br></br>
 </Stack>
 </Stack>
